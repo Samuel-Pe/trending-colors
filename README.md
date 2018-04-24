@@ -32,4 +32,4 @@ var params = { id: 23424819, count: 10 }
 ```
 
 ## Credits ##
-This project has been developed by [Samuel Pélissier](https://twitter.com/sampelissier), with the useful help of [David Boulle](http://www.davidboulle.fr/).
+This project has been developed by [Samuel Pélissier](https://twitter.com/sampelissier), with the welcomed help of [David Boulle](http://www.davidboulle.fr/).

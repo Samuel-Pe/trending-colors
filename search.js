@@ -6,7 +6,7 @@ var config = require("./config")
 /* ------------ SETUP ------------ */
 
 // id = country, count = bullshit, doesn't seem to chance anything :(
-var params = { id: 23424819, count: 10 }
+var params = { id: 1 }
 
 /* ------------ FUNCTIONS ------------ */
 function searchedData(err, data, response) {
@@ -22,7 +22,7 @@ function searchedData(err, data, response) {
     stringRes += '{"hexvalue": "'
     stringRes += colorValue
 
-    // omit coma if last item
+    // ommit coma if last item
     if(i == len-1) {
       stringRes += '"}'
     } else {
