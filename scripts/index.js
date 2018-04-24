@@ -24,20 +24,19 @@
   oReq.onload = function (e) {
       var xhr = e.target;
       console.log('Inside the onload event');
+
+      // just in case the server answers with some rubbish data... 
       if (xhr.responseType === 'json') {
           dataJson = JSON.parse(xhr.response.message);
       } else {
           dataJson = JSON.parse(xhr.responseText).message;
       }
 
-      console.log(dataJson)
-      console.log(dataJson[2])
+      // for each hexadecimal value, adding a new div with a set BG. color
       for(i = 0, len = dataJson.length; i < len ; i++) {
         document.body.innerHTML += '<div style="background-color: '
             + "#" + dataJson[i].hexvalue
             + ';">'
-
-
       }
   };
 
