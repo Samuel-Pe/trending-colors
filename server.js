@@ -30,4 +30,4 @@ function handleRequest (req, res) {
 
 var app = http.createServer(handleRequest);
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.port || 8000);
