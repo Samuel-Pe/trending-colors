@@ -30,6 +30,9 @@ By default, the trending topics' location is France, but you can change the ID v
 ```
 var params = { id: 23424819, count: 10 }
 ```
+To find the ID, you can use [this site](http://woeid.rosselliot.co.nz/lookup) for example.
+
+If you come across the "Cannot read property 'trends' of undefined" error, it's possible the location ID you tried is not associated to any trending topic.
 
 ## Credits ##
 This project has been developed by [Samuel Pélissier](https://twitter.com/sampelissier), with the welcomed help of [David Boulle](http://www.davidboulle.fr/).
