@@ -1,4 +1,4 @@
-### Trending colors v0.1 ###
+### Trending colors v0.2 ###
 
 Displays Twitter hashtags as colors. Completely useless but still fun to build (yay).
 
