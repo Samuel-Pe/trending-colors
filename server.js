@@ -18,11 +18,22 @@ function handleRequest (req, res) {
       res.end(str);
     }
   };
+
   if (req.url.indexOf('/scripts/') >= 0) {
     render(req.url.slice(1), 'application/javascript', httpHandler);
   } else if (req.headers['x-requested-with'] === 'XMLHttpRequest') {
+    console.log("JSON returning...")
+    // basic HTTP header
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: search.stringRes }));
+
+    // waiting for the methodRouter promise to be fulfilled
+    search.methodRouter("basecolors").then(function (fulfilled) {
+        console.log("server: fulfilled > " + fulfilled)
+        // when it's done, sending JSON to client
+        res.end(JSON.stringify({ message:fulfilled}))
+    })
+    console.log("JSON returned!")
+
   } else {
     render('views/index.html', 'text/html', httpHandler);
   }

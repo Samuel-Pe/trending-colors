@@ -1,4 +1,6 @@
-### Twitter colors v0.1 ###
+### Trending colors v0.1 ###
+
+Displays Twitter hashtags as colors. Completely useless but still fun to build (yay).
 
 ## Set up ##
 + Install [npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/)
