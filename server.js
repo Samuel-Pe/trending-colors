@@ -19,22 +19,32 @@ function handleRequest (req, res) {
     }
   };
 
-  if (req.url.indexOf('/scripts/') >= 0) {
-    render(req.url.slice(1), 'application/javascript', httpHandler);
+  // css and JS regex to check the incoming URL
+  var cssRegex = /\.css$/
+  var jsRegex = /^\/scripts\//
+
+  var fileName = req.url.slice(1)
+
+  if(cssRegex.test(req.url)) {
+    console.log("-- loading css... " + req.url)
+    render('views/'+fileName, 'text/css', httpHandler);
+  }
+  else if(jsRegex.test(req.url)){
+    console.log("-- loading script... " + req.url)
+    render(fileName, 'application/javascript', httpHandler);
   } else if (req.headers['x-requested-with'] === 'XMLHttpRequest') {
     console.log("JSON returning...")
     // basic HTTP header
     res.writeHead(200, { 'Content-Type': 'application/json' });
-
     // waiting for the methodRouter promise to be fulfilled
     search.methodRouter("basecolors").then(function (fulfilled) {
-        console.log("server: fulfilled > " + fulfilled)
+        console.log(fulfilled)
         // when it's done, sending JSON to client
         res.end(JSON.stringify({ message:fulfilled}))
+        console.log("JSON returned!")
     })
-    console.log("JSON returned!")
-
   } else {
+    console.log("-- loading html... " + req.url)
     render('views/index.html', 'text/html', httpHandler);
   }
 }
