@@ -4,7 +4,14 @@ Displays Twitter hashtags as colors. Completely useless but still fun to build (
 
 Result:
 ![Image of the result: multiple squares](views/result.png)
+OK. I admit it's not that great but I'm working on improvments.
 
+TODO list:
++ Security tokens
++ Colors modes
++ Switch location
+
+If you want to try it at home...
 ## Set up ##
 + Install [npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/)
 + Install twit (Twitter API with Node.js):
