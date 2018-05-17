@@ -2,6 +2,9 @@
 
 Displays Twitter hashtags as colors. Completely useless but still fun to build (yay).
 
+Result:
+![Image of the result: multiple squares](views/result.png)
+
 ## Set up ##
 + Install [npm](https://www.npmjs.com/) and [Node.js](https://nodejs.org/)
 + Install twit (Twitter API with Node.js):
